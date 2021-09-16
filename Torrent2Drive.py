@@ -13,13 +13,11 @@ downloads = []
 
 
 from google.colab import drive
-
 drive.mount("/content/drive")
 
-
+##Add From Torrent File
 
 from google.colab import files
-
 source = files.upload()
 params = {
     "save_path": "/content/drive/My Drive/Torrent",
@@ -27,6 +25,7 @@ params = {
 }
 downloads.append(ses.add_torrent(params))
 
+##Add From Magnet Link
 
 params = {"save_path": "/content/drive/My Drive/Torrent"}
 
@@ -38,7 +37,7 @@ while True:
         lt.add_magnet_uri(ses, magnet_link, params)
     )
 
-
+##Start Download
 import time
 from IPython.display import display
 import ipywidgets as widgets
